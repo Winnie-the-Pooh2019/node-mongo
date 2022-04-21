@@ -1,10 +1,9 @@
 import express from 'express';
-import mongo from 'mongodb'
+import {run} from "./db/connection";
 
 const app = express();
 const port = 3000;
-const mong = new mongo.MongoClient("");
-
+run();
 app.get('/', (req: express.Request, res: express.Response) => {
     res.send('hello from typescript!');
 });
