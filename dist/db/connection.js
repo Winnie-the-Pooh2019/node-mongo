@@ -32,7 +32,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.connect = exports.run = void 0;
 const mongoDB = __importStar(require("mongodb"));
+const dotenv = __importStar(require("dotenv"));
 const url = "mongodb+srv://ivan:ba1man_sucks@cluster0.91yu0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const mongoClient = new mongoDB.MongoClient(url);
 function run() {
@@ -46,5 +48,11 @@ function run() {
         }
     });
 }
-run();
+exports.run = run;
+function connect() {
+    return __awaiter(this, void 0, void 0, function* () {
+        dotenv.config();
+    });
+}
+exports.connect = connect;
 //# sourceMappingURL=connection.js.map

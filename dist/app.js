@@ -4,9 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-require("./db/connection");
+const connection_1 = require("./db/connection");
 const app = (0, express_1.default)();
 const port = 3000;
+(0, connection_1.run)();
 app.get('/', (req, res) => {
     res.send('hello from typescript!');
 });
