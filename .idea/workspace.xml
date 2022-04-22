@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210baba5-8fd5-4955-a0ea-697024b0b717" name="Changes" comment="removed directory">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_create/create_base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/views/landing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/item.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/items.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/items.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/db/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/connection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/db/connection.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/connection.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/env/db_config.env" beforeDir="false" afterPath="$PROJECT_DIR$/db_config.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/db/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/connection.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -25,25 +41,43 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="286ytZS7BzHpovtQIS8V8v9nxTH" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/ivan/nodes/test/dist/app.js",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/ivan/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/221.5080.210/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="JSON" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.22.5" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.48" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager" selected="Node.js.app.js">
     <configuration name="app.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="dist/app.js" working-dir="$PROJECT_DIR$">
       <method v="2">
@@ -74,6 +108,10 @@
       <option name="presentableId" value="Default" />
       <updated>1650551544970</updated>
       <workItem from="1650551546325" duration="5401000" />
+      <workItem from="1650595270943" duration="1403000" />
+      <workItem from="1650597893149" duration="2582000" />
+      <workItem from="1650606216560" duration="1514000" />
+      <workItem from="1650618788751" duration="4794000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1650551575954</created>
