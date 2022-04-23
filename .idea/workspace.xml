@@ -5,24 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210baba5-8fd5-4955-a0ea-697024b0b717" name="Changes" comment="removed directory">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_create/create_base.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource/views/landing.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/items/item.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/items/items.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/items/items.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/data/magazines.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/data/reviews.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/data/tags.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/migration/migrate.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/MagazineDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/ReviewDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/TagDTO.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_config.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_create/create_base.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/db/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/db/connection.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/connection.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/db/connection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/db/connection.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker-build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/env/db_config.env" beforeDir="false" afterPath="$PROJECT_DIR$/db_config.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/item.interface.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/items.interface.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/items.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/db/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/connection.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,32 +61,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="JSON" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.22.5" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.20.48" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/ivan/IdeaProjects/Data_Bases",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "/home/ivan/IdeaProjects/node-mongo/node_modules/typescript/lib"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ]
+  }
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/db/migration" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
-    <configuration name="app.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="dist/app.js" working-dir="$PROJECT_DIR$">
+    <configuration name="app.js" type="NodeJSConfigurationType" path-to-node="/bin/node" nameIsGenerated="true" path-to-js-file="dist/app.js" working-dir="$PROJECT_DIR$">
       <method v="2">
         <option name="TypeScript.Before.Run" enabled="true" FAIL_ON_ERROR="true" CONFIG_PATH="$PROJECT_DIR$/tsconfig.json" />
       </method>
@@ -94,10 +107,38 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="m" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="m" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="migrate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="migrate" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Docker.docker" />
       <item itemvalue="Node.js.app.js" />
+      <item itemvalue="npm.m" />
+      <item itemvalue="npm.migrate" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.migrate" />
+        <item itemvalue="npm.m" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,6 +153,16 @@
       <workItem from="1650597893149" duration="2582000" />
       <workItem from="1650606216560" duration="1514000" />
       <workItem from="1650618788751" duration="4794000" />
+      <workItem from="1650686199369" duration="1650000" />
+      <workItem from="1650688546367" duration="495000" />
+      <workItem from="1650689214986" duration="2246000" />
+      <workItem from="1650692655484" duration="11994000" />
+      <workItem from="1650708514103" duration="3478000" />
+      <workItem from="1650712049421" duration="24000" />
+      <workItem from="1650720155550" duration="160000" />
+      <workItem from="1650720813033" duration="906000" />
+      <workItem from="1650724191672" duration="884000" />
+      <workItem from="1650725223612" duration="1786000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1650551575954</created>
@@ -171,5 +222,9 @@
     <MESSAGE value="smth" />
     <MESSAGE value="removed directory" />
     <option name="LAST_COMMIT_MESSAGE" value="removed directory" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
