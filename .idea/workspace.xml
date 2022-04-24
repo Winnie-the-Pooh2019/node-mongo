@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210baba5-8fd5-4955-a0ea-697024b0b717" name="Changes" comment="simple db migration established">
-      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/search.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db/MagazineDAO.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/views/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/landing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/migration/migrate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/migration/migrate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MagazineDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MagazineDTO.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ReviewDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ReviewDTO.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/TagDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TagDTO.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/db/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/connection.ts" afterDir="false" />
+    <list default="true" id="210baba5-8fd5-4955-a0ea-697024b0b717" name="Changes" comment="added excluded dirs">
+      <change beforePath="$PROJECT_DIR$/src/controllers/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/search.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/search.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +146,7 @@
       <workItem from="1650724191672" duration="884000" />
       <workItem from="1650725223612" duration="7075000" />
       <workItem from="1650759203515" duration="5128000" />
-      <workItem from="1650768828584" duration="7165000" />
+      <workItem from="1650768828584" duration="7520000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1650551575954</created>
@@ -206,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650727382906</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fetching data api done">
+      <created>1650776062580</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1650776062580</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added excluded dirs">
+      <created>1650776160189</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1650776160189</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +227,9 @@
     <MESSAGE value="smth" />
     <MESSAGE value="removed directory" />
     <MESSAGE value="simple db migration established" />
-    <option name="LAST_COMMIT_MESSAGE" value="simple db migration established" />
+    <MESSAGE value="fetching data api done" />
+    <MESSAGE value="added excluded dirs" />
+    <option name="LAST_COMMIT_MESSAGE" value="added excluded dirs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -7,14 +7,12 @@ const dao = MagazineDAO.getInstance();
 
 searchRouter.get('/all', async (request: Request, response: Response) => {
     const data = (await dao.findAll());
-    // console.log(data);
-    // response.contentType("application/json");
     response.json(data);
 });
 
 searchRouter.get('/byName', async (request: Request, response: Response) => {
     if (!request.query.name)
-        response.redirect('/all');
+        response.redirect('/search/all');
     if (!isString(request.query.name))
         response.json({});
 
@@ -24,7 +22,7 @@ searchRouter.get('/byName', async (request: Request, response: Response) => {
 
 searchRouter.get('/byAuthor', async (request: Request, response: Response) => {
     if (!request.query.author)
-        response.redirect('/all');
+        response.redirect('/search/all');
     if (!isString(request.query.author))
         response.json({});
 
