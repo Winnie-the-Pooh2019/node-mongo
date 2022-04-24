@@ -17,23 +17,40 @@ export class MagazineDAO {
     }
 
     async findAll() {
-        return this.find({});
+        return this.findHow({}, this.filter);
     }
 
     async findByName(queryName: string) {
-        return this.find({ name: new RegExp(queryName.toLowerCase(), 'i') });
+        return await this.findHow({ name: new RegExp(queryName, 'i') }, this.filter);
     }
 
     async findByAuthor(queryAuthor: string) {
-        return this.find({ authors: new RegExp(queryAuthor.toLowerCase(), 'i') });
+        return this.findHow({ authors: new RegExp(queryAuthor, 'i') }, this.filter);
     }
 
-    private async find<T>(object: T) {
+    async findAuthors() {
         const db = await this.connection.connect(process.env.DB_NAME);
+
+        const pipeline = [
+            { $unwind: { path: "$authors" } },
+            { $group: { _id: "$authors" } },
+            { $project: { _id: 1 } }
+        ];
+
+        try {
+            return await (db.collection(process.env.DB_MAGAZINE_COLLECTION as string)
+                .aggregate(pipeline).toArray());
+        } catch (e: any) {
+            console.log(e);
+        }
+    }
+
+    private async findHow<Filter, Projection>(filter: Filter, projection: Projection) {
+        const db = await  this.connection.connect(process.env.DB_NAME);
 
         try {
             return await (db.collection<MagazineDTO>(process.env.DB_MAGAZINE_COLLECTION as string)
-                .find<MagazineDTO>(object, this.filter).toArray());
+                .find<MagazineDTO>(filter, projection).toArray());
         } catch (e: any) {
             console.log(e);
         } finally {

@@ -11,25 +11,32 @@ searchRouter.get('/all', async (request: Request, response: Response) => {
 });
 
 searchRouter.get('/byName', async (request: Request, response: Response) => {
-    if (!request.query.name)
+    if (!request.query.name) {
         response.redirect('/search/all');
-    if (!isString(request.query.name))
-        response.json({});
+        return;
+    }
 
     const data = (await dao.findByName(request.query.name as string));
+    // console.log(data);
+
+    response.setHeader('Content-Type', 'application/json');
     response.json(data);
 });
 
 searchRouter.get('/byAuthor', async (request: Request, response: Response) => {
-    if (!request.query.author)
+    if (!request.query.author) {
         response.redirect('/search/all');
-    if (!isString(request.query.author))
-        response.json({});
+        return;
+    }
 
     const data = (await dao.findByAuthor(request.query.author as string));
-    response.json(data);
-})
+    // console.log(data);
 
-function isString(str: any): boolean {
-    return str instanceof String || typeof str === 'string';
-}
+    response.setHeader('Content-Type', 'application/json');
+    response.json(data);
+});
+
+searchRouter.get('/authors', async (request: Request, response: Response) => {
+    const data = await dao.findAuthors();
+    response.json(data);
+});

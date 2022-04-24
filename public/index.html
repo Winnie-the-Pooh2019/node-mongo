@@ -11,20 +11,18 @@
 <br/>
 <div class="search-container">
     <form action="/search/byName" method="get">
-        <input class="search" id="searchName" type="search" name="name" placeholder="Search">
+        <input class="search" id="search" type="search" name="name" placeholder="Search">
         <br/>
-        <input type="submit" class="button" value="Search by name" onclick="onSearchName()" />
+        <input type="button" class="button" value="Search by name" onclick="onSearchName()" />
+        <input type="button" class="button" value="Search by author" onclick="onSearchByAuthor()" />
     </form>
     <br/>
-    <form action="/search/byAuthor" method="get">
-        <input class="search" id="searchAuthor" type="search" name="author" placeholder="Search">
-        <br/>
-        <input type="submit" class="button" value="Search by author" onclick="onSearchByAuthor()" />
-    </form>
     <br/>
     <br/>
     <div id="content">
         <button class="button" type="button" onclick="getAll()">Click here to get all</button>
+        <select id="authors">
+        </select>
     </div>
 </div>
 
