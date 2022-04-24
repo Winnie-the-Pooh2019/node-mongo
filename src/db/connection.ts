@@ -2,17 +2,6 @@ import * as mongoDB from "mongodb";
 import * as dotenv from "dotenv";
 import {Db, MongoClient} from "mongodb";
 
-export async function connect(): Promise<mongoDB.MongoClient> {
-    dotenv.config();
-    const url = process.env.DB_CONNECTION_STRING;
-
-    console.log(url);
-    if (url !== undefined) {
-        return new mongoDB.MongoClient(url);
-    } else
-        throw new URIError("couldn't find connection url");
-}
-
 export class Connection {
     private static it: Connection;
 
@@ -34,6 +23,14 @@ export class Connection {
             return res.db(dbName);
         else
             return res.db(process.env.DB_NAME);
+    }
+
+    async disconnect() {
+        try {
+            await this.client.close();
+        } catch (e: any) {
+            console.log(e);
+        }
     }
 
     static getInstance() {

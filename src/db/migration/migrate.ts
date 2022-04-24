@@ -1,4 +1,4 @@
-import {Connection} from "../../server/db/connection";
+import {Connection} from "../connection";
 import * as fs from 'fs';
 import {DTO} from "../../model/DTO";
 import TagDTO from "../../model/TagDTO";

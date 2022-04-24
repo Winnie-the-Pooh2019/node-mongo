@@ -6,8 +6,4 @@ export default class TagDTO extends DTO{
         public name?: string,
         public _id?: ObjectId
     ) {super();}
-
-    genPath(): string {
-        return "";
-    }
 }

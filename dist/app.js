@@ -28,18 +28,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv = __importStar(require("dotenv"));
-console.log("establishing the app");
+const path_1 = __importDefault(require("path"));
+const search_1 = require("./controllers/search");
 dotenv.config();
 if (!process.env.APP_PORT)
     process.exit(1);
 const app = (0, express_1.default)();
 const PORT = parseInt(process.env.APP_PORT, 10);
 console.log(PORT);
-app.get('/', (req, res) => {
-    console.log(`${PORT}`);
-    const path = __dirname.replace(/dist/, "/resource/views/landing.html");
-    res.sendFile(path);
-});
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: false }));
+app.use(express_1.default.static(path_1.default.join(__dirname.replace('dist', ''), 'public')));
+app.use('/search', search_1.searchRouter);
+console.log(path_1.default);
 app.listen(PORT).on("error", () => {
     console.log('error while trying listen the port' + PORT);
 });

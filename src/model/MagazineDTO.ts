@@ -9,8 +9,4 @@ export default class MagazineDTO extends DTO{
         public tagId?: ObjectId[],
         public content?: string
     ) {super();}
-
-    genPath(): string {
-        return "";
-    }
 }

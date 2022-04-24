@@ -8,8 +8,4 @@ export default class ReviewDTO extends DTO{
         public mark?: number,
         public _id?: ObjectId
     ) {super();}
-
-    genPath(): string {
-        return "";
-    }
 }

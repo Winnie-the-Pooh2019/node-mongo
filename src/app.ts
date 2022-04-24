@@ -1,7 +1,7 @@
-import express, {Request, Response} from 'express';
+import express from 'express';
 import * as dotenv from "dotenv"
-
-console.log("establishing the app");
+import path from "path";
+import { searchRouter } from "./controllers/search";
 
 dotenv.config();
 if (!process.env.APP_PORT)
@@ -10,11 +10,12 @@ const app = express();
 const PORT: number = parseInt(process.env.APP_PORT as string, 10);
 console.log(PORT);
 
-app.get('/', (req: Request, res: Response) => {
-    console.log(`${PORT}`);
-    const path = __dirname.replace(/dist/, "/resource/views/landing.html");
-    res.sendFile(path);
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname.replace('dist', ''), 'public')));
+app.use('/search', searchRouter);
+
+console.log(path);
 
 app.listen(PORT).on("error", () => {
     console.log('error while trying listen the port' + PORT);

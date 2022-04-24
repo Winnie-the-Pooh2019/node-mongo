@@ -4,32 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210baba5-8fd5-4955-a0ea-697024b0b717" name="Changes" comment="removed directory">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource/data/magazines.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource/data/reviews.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource/data/tags.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db/migration/migrate.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/DTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/MagazineDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/ReviewDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/TagDTO.ts" afterDir="false" />
+    <list default="true" id="210baba5-8fd5-4955-a0ea-697024b0b717" name="Changes" comment="simple db migration established">
+      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/javascripts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/search.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/MagazineDAO.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_config.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_create/create_base.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/db/connection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/db/connection.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker-build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/item.interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/items.interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/items.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/db/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/connection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/views/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/landing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/migration/migrate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/migration/migrate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MagazineDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MagazineDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ReviewDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ReviewDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/TagDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TagDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/db/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/connection.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +56,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/ivan/IdeaProjects/Data_Bases",
+    "last_opened_file_path": "/home/ivan/IdeaProjects/node-mongo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,11 +78,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resource/views" />
       <recent name="$PROJECT_DIR$/src/db/migration" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/db/" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/javascripts" />
+      <recent name="$PROJECT_DIR$/views" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
@@ -162,7 +160,9 @@
       <workItem from="1650720155550" duration="160000" />
       <workItem from="1650720813033" duration="906000" />
       <workItem from="1650724191672" duration="884000" />
-      <workItem from="1650725223612" duration="1786000" />
+      <workItem from="1650725223612" duration="7075000" />
+      <workItem from="1650759203515" duration="5128000" />
+      <workItem from="1650768828584" duration="7165000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1650551575954</created>
@@ -199,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650556973435</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="simple db migration established">
+      <created>1650727382905</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650727382906</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +228,8 @@
     <MESSAGE value="gitignore changed" />
     <MESSAGE value="smth" />
     <MESSAGE value="removed directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed directory" />
+    <MESSAGE value="simple db migration established" />
+    <option name="LAST_COMMIT_MESSAGE" value="simple db migration established" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
