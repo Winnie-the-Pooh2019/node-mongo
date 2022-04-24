@@ -1,3 +1,5 @@
+const url = 'http://localhost:3000/'
+
 async function onSearchName() {
     const bar = document.getElementById("searchBar").value;
 
@@ -13,14 +15,32 @@ async function onSearchName() {
 }
 
 async function getAll() {
+    const correctUrl = url + "search/all";
+    const response = await fetch(correctUrl, {
+        method: 'GET'
+    });
+
+    if (response.ok) {
+        const json = await response.json();
+        console.log(json);
+    } else {
+        alert("Incorrect request");
+    }
+
+    const table = document.getElementById('articles');
+
+    if (!!table)
+        table.remove();
+
     const contentDiv = document.getElementById("content"),
         tbl = document.createElement('table');
     tbl.id = 'articles';
-    // tbl.style.width = '100px';
     tbl.style.border = '1px solid black';
+}
 
+function fillTable(table, data) {
     for (let i = 0; i < 3; i++) {
-        const tr = tbl.insertRow();
+        const tr = table.insertRow();
         for (let j = 0; j < 2; j++) {
             if (i === 2 && j === 1) {
                 break;
@@ -34,7 +54,7 @@ async function getAll() {
             }
         }
     }
-    contentDiv.appendChild(tbl);
+    contentDiv.appendChild(table);
 }
 
 async function sendRequest(url, data) {
