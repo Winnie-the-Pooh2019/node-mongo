@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Journals</title>
-    <script type="text/javascript" src="/javascripts/index.js"></script>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript" src="javascripts/index.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
 <br/>
 <div class="search-container">
-    <form action="/search" method="get">
-        <input class="search" id="searchName" type="search" name="q" placeholder="Search">
+    <form action="/search/byName" method="get">
+        <input class="search" id="searchName" type="search" name="name" placeholder="Search">
         <br/>
-        <input type="submit" class="button" value="Enter to Win" />
+        <input type="submit" class="button" value="Search by name" onclick="onSearchName()" />
     </form>
-    <form action="/search" method="get">
-        <input class="search" id="searchAuthor" type="search" name="q" placeholder="Search">
+    <br/>
+    <form action="/search/byAuthor" method="get">
+        <input class="search" id="searchAuthor" type="search" name="author" placeholder="Search">
         <br/>
-        <input type="submit" class="button" value="Enter to Win" />
+        <input type="submit" class="button" value="Search by author" onclick="onSearchByAuthor()" />
     </form>
     <br/>
     <br/>
