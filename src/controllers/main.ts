@@ -2,6 +2,7 @@ import * as express from 'express';
 import {Request, Response} from "express/ts4.0";
 import {MagazineDAO} from "../db/MagazineDAO";
 import {TagDAO} from "../db/TagDAO";
+import {ObjectId} from "mongodb";
 
 export const mainRouter = express.Router();
 
@@ -26,10 +27,12 @@ mainRouter.get('/info', async (request: Request, response: Response) => {
     }
 
     const id: string = request.query.id as string;
-    console.log(`id = ${id}`);
+    console.log(`id = ${id} ${new ObjectId(id)}`);
 
     const magazineDao = MagazineDAO.getInstance();
-    const data = (await magazineDao.findById(parseInt(id, 10)));
+    const data = (await magazineDao.findById(id));
+    console.log(parseInt(id, 16))
+    console.log(`findById = ${data}`);
     if (!data) {
         response.redirect('/');
         return;

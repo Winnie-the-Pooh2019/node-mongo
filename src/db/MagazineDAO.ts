@@ -1,5 +1,5 @@
 import {Connection} from "./Connection";
-import {Document, DeleteResult} from "mongodb";
+import {Document, DeleteResult, ObjectId} from "mongodb";
 import {ReviewDAO} from "./ReviewDAO";
 import {MainDAO} from "./MainDAO";
 
@@ -55,7 +55,7 @@ export class MagazineDAO extends MainDAO {
         return this.aggregateHow(pipeline);
     }
 
-    async findById(id: number) {
+    async findById(id: string) {
         const lookupTags = {
             $lookup: {
                 from: "tags",
@@ -74,7 +74,7 @@ export class MagazineDAO extends MainDAO {
             }
         };
 
-        const pipeline = [ { $match: { _id: { $eq: id } } },
+        const pipeline = [ { $match: { _id: { $eq: new ObjectId(id) } } },
             lookupReviews, lookupTags ];
 
         return this.aggregateHow(pipeline);

@@ -63,12 +63,15 @@ searchRouter.post('/add', async (request: Request, response: Response) => {
 
     console.log(request.body);
 
+    const authors = request.body.authors.split(/,\s*/);
     const array = request.body.tags.split(/,\s*/);
     console.log(`tags = ${array}`);
     const tagDao = TagDAO.getInstance();
     const tags = await tagDao.findHow({}, {});
     const ids = await insertOrGetTag(array, typeof tags === "undefined" ? undefined : tags);
+
     const object = request.body;
+    object.authors = authors;
     object.tags = ids;
     console.log(object);
     const insertRes = (await MagazineDAO.getInstance().insertOne(object));

@@ -99,10 +99,22 @@ function fillTable(json) {
     for (let i = 0; i < json.length; i++) {
         const tr = table.insertRow();
 
-        for (let value of Object.values(json[i])) {
+        // for (let value of Object.values(json[i])) {
+        //     const td = tr.insertCell();
+        //     if (value !== null && value !== undefined)
+        //         td.appendChild(document.createTextNode(`${value}`));
+        //     td.style.border = '1px solid black';
+        // }
+
+        const values = Object.values(json[i]);
+        for (let j = 0; j < Object.values(json[i]).length; j++) {
             const td = tr.insertCell();
-            if (value !== null && value !== undefined)
-                td.appendChild(document.createTextNode(`${value}`));
+            let text;
+            if (j === 0)
+                text = i + 1;
+            else if (values[j] !== null && values[j] !== undefined)
+                text = values[j];
+            td.appendChild(document.createTextNode(`${text}`));
             td.style.border = '1px solid black';
         }
 

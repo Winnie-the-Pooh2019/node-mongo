@@ -36,7 +36,7 @@ head
                             input#name.form-control(type='text', placeholder='Title' name='name')
                         div.form-group
                             label(for='authors') Authors:
-                            input#authors.form-control(type='text', placeholder='Somebody' name='authors')
+                            input#authors.form-control(type='text', placeholder='Somebody' name='authors' onchange='validateTags(this)')
                         div.form-group
                             label(for='date') Pick date:
                             input#date.form-control(type='date', name='date')
