@@ -22,20 +22,10 @@ export async function checkDataPersistence() {
     if (collections.length === 0) {
         const tagis = Array();
         for (let tag of tags) {
-            // tag._id = new ObjectId(tag._id);
             tagis.push(new ObjectId(tag._id));
         }
         const revis = Array();
         for (let review of reviews) {
-            // const index = revIndexOff(magazines, review);
-            // console.log(`paht to review = ${index}`);
-            // console.log(`${new ObjectId("2")} ${new ObjectId("2")}`)
-            // if (index[0] !== -1 && index[1] !== -1) {
-            //     const revid = new ObjectId(review._id);
-            //     magazines[index[0]].reviews[index[1]] = revid;
-            //     review._id = new ObjectId(review._id);
-            // }
-            // review._id = new ObjectId(review._id);
             revis.push(new ObjectId(review._id));
         }
 
@@ -59,9 +49,9 @@ export async function checkDataPersistence() {
             mag.tags = tas;
         }
         for (let i = 0; i < tags.length; i++)
-            tags[0]._id = tagis[i];
+            tags[i]._id = tagis[i];
         for (let i = 0; i < reviews.length; i++)
-            reviews[0]._id = revis[i];
+            reviews[i]._id = revis[i];
 
         console.log(magazines);
         console.log(reviews);
