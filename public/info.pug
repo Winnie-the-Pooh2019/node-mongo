@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>#{article.name}</title>
+<meta charset="utf-8" />
+</head>
+<body>
+    <h3>#{article.name}</h3>
+    <div>
+        <p>Статья № #{article._id}. Опубликовано: #{article.date}</p>
+        <br/>
+        <p>Авторы :</p>
+        <ul>
+        each author in article.authors
+            <li>#{author}</li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h3>Содержание:</h3>
+        <p>#{article.content}</p>
+    </div>
+    <br/>
+    div
+        h3 Отзывы
+        each review in article.reviews
+            div
+                div
+                    p Номер отзыва: #{review._id}
+                    p
+                        b #{review.name} 
+                        i #{review.message}
+                div
+                    p mark: #{review.mark}
+            br
+</body>
+<html>

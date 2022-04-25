@@ -1,9 +1,4 @@
-import {ObjectId} from "mongodb";
-import {DTO} from "./DTO";
-
-export default class TagDTO extends DTO{
-    constructor(
-        public name?: string,
-        public _id?: ObjectId
-    ) {super();}
+export interface TagDTO {
+        name: string,
+        _id: number
 }

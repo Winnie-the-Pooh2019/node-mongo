@@ -1,11 +1,6 @@
-import {ObjectId} from "mongodb";
-import {DTO} from "./DTO";
-
-export default class ReviewDTO extends DTO{
-    constructor(
-        public name?: string,
-        public message?: string,
-        public mark?: number,
-        public _id?: ObjectId
-    ) {super();}
+export interface ReviewDTO {
+    name: string,
+    message: string,
+    mark: number,
+    _id: number
 }

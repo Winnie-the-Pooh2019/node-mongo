@@ -9,6 +9,7 @@ fetch(url + "search/authors", {
 
             for (let i = 0; i < json.length; i++) {
                 const opt = document.createElement('option');
+                opt.id = 'authors';
 
                 for (let key in json[i]) {
                     console.log(`json[${i}] = ${key} ${json[i]._id}`);
@@ -57,6 +58,19 @@ async function onSearchName() {
     await sendRequest({name: text}, correctUrl);
 }
 
+async function onSearchByDate() {
+    const start = document.getElementById('startDate').value;
+    const end = document.getElementById('endDate').value;
+
+    if (end < start) {
+        alert('End date must be grater or equal to start date');
+        return;
+    }
+
+    const correctUrl = url + 'search/betweenDates?';
+    await sendRequest({start: start, end: end}, correctUrl);
+}
+
 async function sendRequest(object, correctUrl) {
     const response = await fetch(correctUrl + (
         Object.keys(object).length !== 0 ? new URLSearchParams(object) : ''
@@ -77,12 +91,9 @@ async function sendRequest(object, correctUrl) {
 function fillTable(json) {
     let table = document.getElementById('articles');
 
-    if (!!table)
-        table.remove();
+    removeTable(table);
 
     const contentDiv = document.getElementById("content");
-    table = document.createElement('table');
-    table.id = 'articles';
     table.style.border = '1px solid black';
 
     for (let i = 0; i < json.length; i++) {
@@ -94,6 +105,68 @@ function fillTable(json) {
                 td.appendChild(document.createTextNode(`${value}`));
             td.style.border = '1px solid black';
         }
+
+        const td = tr.insertCell();
+
+        const button = document.createElement('button');
+        button.innerText = 'More Info';
+        button.id = `more${json[i]._id}`;
+        button.onclick = async () => {
+            location.href='/info?' + new URLSearchParams({
+                id: json[i]._id
+            });
+        }
+        td.appendChild(button);
+
+        const td2 = tr.insertCell();
+        const deleteButton = document.createElement('button');
+        deleteButton.innerText = 'Delete this';
+        deleteButton.id = `delete${json[i]._id}`;
+        deleteButton.onclick = async () => {
+            const correctUrl = url + 'delete/byId?';
+            const object = { id: json[i]._id };
+
+            const response = await fetch(correctUrl + (
+                Object.keys(object).length !== 0 ? new URLSearchParams(object) : ''
+            ), {
+                method: 'GET'
+            });
+
+            if (response.ok) {
+                console.log(`successfully re-movement article with id: ${json[i]._id}`);
+                removeAuthor(json[i].authors);
+                json.splice(i, 1);
+
+                fillTable(json);
+            } else {
+                alert("Incorrect request");
+            }
+        }
+        td2.appendChild(deleteButton);
     }
+
     contentDiv.appendChild(table);
+}
+
+function removeAuthor(authorNames) {
+    const selector = document.getElementById("authors");
+
+    for (let i = 0; i < selector.options.length; i++) {
+        const option = selector.options[i];
+        if (authorNames.includes(option.text)) {
+            selector.remove(i);
+            console.log(`removed option number = ${i}`);
+        }
+    }
+}
+
+function removeTable(table) {
+    if (!!table && table.rows.length > 1) {
+        while (table.rows.length > 1) {
+            console.log(`rows = ${table.rows.length}`);
+            table.deleteRow(1);
+        }
+
+        console.log(`rows = ${table.rows.length}`);
+    }
 }

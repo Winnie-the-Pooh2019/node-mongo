@@ -36,6 +36,20 @@ searchRouter.get('/byAuthor', async (request: Request, response: Response) => {
     response.json(data);
 });
 
+searchRouter.get('/betweenDates', async (request: Request, response: Response) => {
+    if (!request.query.start || !request.query.end) {
+        response.redirect('/search/all');
+        return;
+    }
+
+    const data = (await dao.fundBetweenDates(
+        request.query.start as string, request.query.end as string));
+    console.log(data);
+
+    response.setHeader('Content-Type', 'application/json');
+    response.json(data);
+});
+
 searchRouter.get('/authors', async (request: Request, response: Response) => {
     const data = await dao.findAuthors();
     response.json(data);

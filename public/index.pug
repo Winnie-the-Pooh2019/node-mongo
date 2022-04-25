@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Journals</title>
+<script type="text/javascript" src="javascripts/index.js"></script>
+<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+<br/>
+<div class="search-container">
+<form action="/search/byName" method="get">
+<input class="search" id="search" type="search" name="name" placeholder="Search">
+<br/>
+<input type="button" class="button" value="Search by name" onclick="onSearchName()" />
+<input type="button" class="button" value="Search by author" onclick="onSearchByAuthor()" />
+</form>
+<form>
+    <p>Start Date</p>
+    <input id="startDate" type="date" value="2000-02-02">
+    <p>End Date</p>
+    <input id="endDate" type="date" value="2000-02-02">
+    <input type="button" class="button" value="Search in date interval" onclick="onSearchByDate()" />
+</form>
+<br/>
+<br/>
+<br/>
+<div id="content">
+<button class="button" type="button" onclick="getAll()">Click here to get all</button>
+<select id="authors">
+</select>
+    p   
+    a(href="/create") create new article
+<br/>
+<table id="articles">
+<tr style="border: 1px solid black">
+<td style="border: 1px solid black">Id</td>
+<td style="border: 1px solid black">Title</td>
+<td style="border: 1px solid black">Authors</td>
+<td style="border: 1px solid black">Date</td>
+<td style="border: 1px solid black">More Info</td>
+<td style="border: 1px solid black">Delete</td>
+</tr>
+</table>
+</div>
+</div>
+
+
+
+</body>
+</html>
