@@ -1,13 +1,16 @@
 import {Connection} from "./Connection";
-import {MagazineDTO} from "../model/MagazineDTO";
+import {Document, DeleteResult} from "mongodb";
 import {ReviewDAO} from "./ReviewDAO";
+import {MainDAO} from "./MainDAO";
 
-export class MagazineDAO {
+export class MagazineDAO extends MainDAO {
     private static it: MagazineDAO;
-    private COLLECTION = process.env.DB_MAGAZINE_COLLECTION as string;
+    COLLECTION = process.env.DB_MAGAZINE_COLLECTION as string;
     private readonly projection: { projection: { _id: number, name: number, authors: number, date: number } };
 
-    private constructor(private connection: Connection) {
+    private constructor(connection: Connection) {
+        super(connection);
+
         this.projection = {
             projection: {
                 _id: 1,
@@ -19,6 +22,7 @@ export class MagazineDAO {
     }
 
     async findAll() {
+        console.log(`IN FINDaLL`);
         return this.findHow({}, this.projection);
     }
 
@@ -27,6 +31,7 @@ export class MagazineDAO {
     }
 
     async findByAuthor(queryAuthor: string) {
+        console.log('IN FINDBYAUTHOR');
         return this.findHow({authors: new RegExp(queryAuthor, 'i')}, this.projection);
     }
 
@@ -39,22 +44,15 @@ export class MagazineDAO {
     }
 
     async findAuthors() {
-        const db = await this.connection.connect(process.env.DB_NAME);
+        console.log('in find authors');
 
-        const pipeline = [
+        const pipeline: Document[] = [
             {$unwind: {path: "$authors"}},
             {$group: {_id: "$authors"}},
             {$project: {_id: 1}}
         ];
 
-        try {
-            return await (db.collection(this.COLLECTION)
-                .aggregate(pipeline).toArray());
-        } catch (e: any) {
-            console.log(e);
-        } finally {
-            await this.connection.disconnect();
-        }
+        return this.aggregateHow(pipeline);
     }
 
     async findById(id: number) {
@@ -76,18 +74,10 @@ export class MagazineDAO {
             }
         };
 
-        try {
-            const db = await this.connection.connect(process.env.DB_NAME);
-            const pipeline = [ { $match: { _id: { $eq: id } } },
-                lookupReviews, lookupTags ];
+        const pipeline = [ { $match: { _id: { $eq: id } } },
+            lookupReviews, lookupTags ];
 
-            return await (db.collection(this.COLLECTION)
-                .aggregate(pipeline).toArray());
-        } catch (e: any) {
-            console.log(e);
-        } finally {
-            await this.connection.disconnect();
-        }
+        return this.aggregateHow(pipeline);
     }
 
     async deleteOneById(id: number): Promise<boolean> {
@@ -96,33 +86,21 @@ export class MagazineDAO {
             if (!articleReviews)
                 return false;
 
+            console.log(`articlereviews = \n${articleReviews[0].reviews}`);
+
             const reviewDao = ReviewDAO.getInstance();
-            for (const article of articleReviews) {
-                const res = await reviewDao.deleteOneById(id);
+            for (const review of articleReviews[0].reviews) {
+                const res = await reviewDao.deleteOneById(review);
                 if (!res)
                     return false;
             }
 
-            const db = await this.connection.connect(process.env.DB_NAME);
-            const result = await db.collection(this.COLLECTION).deleteOne({_id: id});
+            const result = await this.deleteOneHow({_id: id}) as DeleteResult;
 
             return (result.deletedCount === 1);
         } catch (e: any) {
             console.log(e);
             return false;
-        } finally {
-            await this.connection.disconnect();
-        }
-    }
-
-    private async findHow<Filter, Projection>(filter: Filter, projection: Projection) {
-        const db = await this.connection.connect(process.env.DB_NAME);
-
-        try {
-            return await (db.collection<MagazineDTO>(process.env.DB_MAGAZINE_COLLECTION as string)
-                .find<MagazineDTO>(filter, projection).toArray());
-        } catch (e: any) {
-            console.log(e);
         } finally {
             await this.connection.disconnect();
         }

@@ -17,7 +17,6 @@ searchRouter.get('/byName', async (request: Request, response: Response) => {
     }
 
     const data = (await dao.findByName(request.query.name as string));
-    // console.log(data);
 
     response.setHeader('Content-Type', 'application/json');
     response.json(data);
@@ -30,7 +29,6 @@ searchRouter.get('/byAuthor', async (request: Request, response: Response) => {
     }
 
     const data = (await dao.findByAuthor(request.query.author as string));
-    // console.log(data);
 
     response.setHeader('Content-Type', 'application/json');
     response.json(data);

@@ -1,22 +1,24 @@
-import {MagazineDTO} from "../model/MagazineDTO";
+import {Document} from "mongodb";
 import {Connection} from "./Connection";
 
 export abstract class MainDAO {
-    protected readonly DB_NAME?: string;
+    protected readonly DB_NAME = process.env.DB_NAME;
     protected readonly COLLECTION?: string;
 
-    protected constructor(protected connection: Connection) {}
+    protected constructor(protected connection: Connection) {
+    }
 
     public async findHow<Filter, Projection>(filter: Filter, projection: Projection) {
+        console.log(`dbname = ${this.DB_NAME}`);
         const db = await this.connection.connect(this.DB_NAME);
 
         try {
-            return await (db.collection(this.COLLECTION as string)
-                .find(filter, projection).toArray());
+            return (db.collection(this.COLLECTION as string)
+                .find(filter, projection)).toArray().finally(() => {
+                this.connection.disconnect();
+            });
         } catch (e: any) {
             console.log(e);
-        } finally {
-            await this.connection.disconnect();
         }
     }
 
@@ -24,12 +26,12 @@ export abstract class MainDAO {
         const db = await this.connection.connect(this.DB_NAME);
 
         try {
-            return await (db.collection(this.COLLECTION as string)
-                .aggregate(pipeline));
+            return (db.collection(this.COLLECTION as string)
+                .aggregate(pipeline, {})).toArray().finally(() => {
+                this.connection.disconnect();
+            });
         } catch (e: any) {
             console.log(e);
-        } finally {
-            await this.connection.disconnect();
         }
     }
 
@@ -37,7 +39,7 @@ export abstract class MainDAO {
         const db = await this.connection.connect(this.DB_NAME);
 
         try {
-            return await (db.collection(this.COLLECTION as string)
+            return (await db.collection(this.COLLECTION as string)
                 .deleteOne(filter));
         } catch (e: any) {
             console.log(e);
