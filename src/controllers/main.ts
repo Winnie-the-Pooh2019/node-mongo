@@ -1,11 +1,16 @@
 import * as express from 'express';
 import {Request, Response} from "express/ts4.0";
 import {MagazineDAO} from "../db/MagazineDAO";
+import {TagDAO} from "../db/TagDAO";
 
 export const mainRouter = express.Router();
 
 mainRouter.get('/create', async (request: Request, response: Response) => {
-    response.render('create.pug');
+    const tagsDao = TagDAO.getInstance();
+    const allTags = await tagsDao.findHow({}, {});
+    response.render('create.pug', {
+        tags: allTags
+    });
 });
 
 mainRouter.get('/', async (request: Request, response: Response) => {

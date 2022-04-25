@@ -18,14 +18,28 @@ head
                     //#editForm.form(role='form' method='GET' action='https://www.google.com/')
                     form(role='form' method='GET' action='https://www.google.com/')
                         div.form-group
-                            label(for='name') Name:
-                            input#name.form-control(type='text', placeholder='name' name='name')
+                            label(for='name') Title:
+                            input#name.form-control(type='text', placeholder='Title' name='name')
                         div.form-group
-                            label(for='email') Email:
-                            input#email.form-control(type='email', placeholder='name@email.com' name='email')
+                            label(for='authors') Authors:
+                            input#authors.form-control(type='text', placeholder='Somebody' name='authors')
+                        div.form-group
+                            label(for='date') Pick date:
+                            input#date.form-control(type='date', name='date')
+
+                        div.form-switch
+                            label Choose tags:
+                            br
+                            each tag in tags
+                                div
+                                    label.form-check
+                                        input#chek(type="checkbox")
+                                        .v-label #{tag.name}
+
                         button.btn.btn-primary(type="submit", name="asdf") Submit
-                        button.btn.btn-default(type="button", data-dismiss="modal")
-                            | Close
+                        //button.btn.btn-default(type="button", data-dismiss="modal")
+                        //    | Close
+
                 // Modal Footer
                 .modal-footer
                     h4 footer

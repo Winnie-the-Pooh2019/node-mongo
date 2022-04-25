@@ -1,22 +1,13 @@
 import {Connection} from "./Connection";
+import {MainDAO} from "./MainDAO";
 
-export class ReviewDAO {
+export class ReviewDAO extends MainDAO{
     private static it: ReviewDAO;
-    private COLLECTION = process.env.DB_REVIEWS_COLLECTION as string;
-    private constructor(private connection: Connection) {}
+    COLLECTION = process.env.DB_REVIEWS_COLLECTION as string;
 
     async deleteOneById(id: number): Promise<boolean> {
-        try {
-            const db = await this.connection.connect(process.env.DB_NAME);
-            const res = await db.collection(process.env.DB_REVIEWS_COLLECTION as string).deleteOne({_id: id});
-
-            return res.deletedCount === 1;
-        } catch (e: any) {
-            console.log(e);
-            return false;
-        } finally {
-            await this.connection.disconnect();
-        }
+        const res = await this.deleteOneHow({_id: id});
+        return (typeof res !== "undefined") && res.deletedCount === 1;
     }
 
     static getInstance() {
