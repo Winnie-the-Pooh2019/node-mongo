@@ -106,6 +106,10 @@ export class MagazineDAO extends MainDAO {
         }
     }
 
+    async insertOne<Type>(object: Type) {
+        return this.insertHow(object);
+    }
+
     static getInstance() {
         if (!this.it)
             this.it = new MagazineDAO(Connection.getInstance());

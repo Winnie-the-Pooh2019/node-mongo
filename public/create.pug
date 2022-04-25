@@ -1,8 +1,22 @@
 head
     meta(charset='utf-8')
-    title Title2
+    title Create
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+    script.
+        function validateTags(container) {
+            const isValid = (/^\w+(?:,\s.\w+(?:\w*\s*)*)*$/).test(container.value);
+            const button = document.getElementById('submit');
 
+            if (isValid) {
+                container.style.backgroundColor = '#bfa';
+                button.disabled = false;
+            } else {
+                container.style.backgroundColor = '#e38168';
+                button.disabled = true;
+            }
+
+            return isValid;
+        }
     body
         .modal-dialog
             .modal-content
@@ -16,7 +30,7 @@ head
                 // Modal Body
                 .modal-body
                     //#editForm.form(role='form' method='GET' action='https://www.google.com/')
-                    form(role='form' method='GET' action='https://www.google.com/')
+                    form(role='form' method='POST' action='/search/add')
                         div.form-group
                             label(for='name') Title:
                             input#name.form-control(type='text', placeholder='Title' name='name')
@@ -26,19 +40,18 @@ head
                         div.form-group
                             label(for='date') Pick date:
                             input#date.form-control(type='date', name='date')
+                        hr
 
-                        div.form-switch
-                            label Choose tags:
-                            br
-                            each tag in tags
-                                div
-                                    label.form-check
-                                        input#chek(type="checkbox")
-                                        .v-label #{tag.name}
+                        div.form-group
+                            label(for='t') Tags:
+                            input#t.form-control(type='text', placeholder='Somebody' name='tags' onchange='validateTags(this)')
 
-                        button.btn.btn-primary(type="submit", name="asdf") Submit
-                        //button.btn.btn-default(type="button", data-dismiss="modal")
-                        //    | Close
+                        hr
+                        div.form-group
+                            label(for='content') Input the content:
+                            input#content.form-control(type='text', placeholder='Your content' name='content')
+
+                        button.btn.btn-primary#submit(type="submit") Submit
 
                 // Modal Footer
                 .modal-footer

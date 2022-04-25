@@ -35,6 +35,19 @@ export abstract class MainDAO {
         }
     }
 
+    public async insertHow<Type>(object: Type) {
+        const db = await this.connection.connect(this.DB_NAME);
+
+        try {
+            return (db.collection(this.COLLECTION as string)
+                .insertOne(object)).finally(() => {
+                this.connection.disconnect();
+            });
+        } catch (e: any) {
+            console.log(e);
+        }
+    }
+
     public async deleteOneHow<Filter>(filter: Filter) {
         const db = await this.connection.connect(this.DB_NAME);
 
