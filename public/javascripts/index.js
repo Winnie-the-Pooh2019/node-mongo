@@ -71,6 +71,24 @@ async function onSearchByDate() {
     await sendRequest({start: start, end: end}, correctUrl);
 }
 
+function validate(container) {
+    const isValid = (/^\w+(?:,\s.\w+(?:\w*\s*)*)*$/).test(container.value);
+    const byName = document.getElementById('byName');
+    const byAuthor = document.getElementById('byAuthor');
+
+    if (isValid) {
+        container.style.backgroundColor = '#bfa';
+        byName.disabled = false;
+        byAuthor.disabled = false;
+    } else {
+        container.style.backgroundColor = '#e38168';
+        byName.disabled = true;
+        byAuthor.disabled = true;
+    }
+
+    return isValid;
+}
+
 async function sendRequest(object, correctUrl) {
     const response = await fetch(correctUrl + (
         Object.keys(object).length !== 0 ? new URLSearchParams(object) : ''
@@ -94,17 +112,10 @@ function fillTable(json) {
     removeTable(table);
 
     const contentDiv = document.getElementById("content");
-    table.style.border = '1px solid black';
+    // table.style.border = '1px solid black';
 
     for (let i = 0; i < json.length; i++) {
         const tr = table.insertRow();
-
-        // for (let value of Object.values(json[i])) {
-        //     const td = tr.insertCell();
-        //     if (value !== null && value !== undefined)
-        //         td.appendChild(document.createTextNode(`${value}`));
-        //     td.style.border = '1px solid black';
-        // }
 
         const values = Object.values(json[i]);
         for (let j = 0; j < Object.values(json[i]).length; j++) {
@@ -115,13 +126,14 @@ function fillTable(json) {
             else if (values[j] !== null && values[j] !== undefined)
                 text = values[j];
             td.appendChild(document.createTextNode(`${text}`));
-            td.style.border = '1px solid black';
+            // td.style.border = '1px solid black';
         }
 
         const td = tr.insertCell();
 
         const button = document.createElement('button');
         button.innerText = 'More Info';
+        button.className = 'btn btn-outline-primary';
         button.id = `more${json[i]._id}`;
         button.onclick = async () => {
             location.href='/info?' + new URLSearchParams({
@@ -133,6 +145,7 @@ function fillTable(json) {
         const td2 = tr.insertCell();
         const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete this';
+        deleteButton.className = 'btn btn-outline-danger';
         deleteButton.id = `delete${json[i]._id}`;
         deleteButton.onclick = async () => {
             const correctUrl = url + 'delete/byId?';
@@ -173,10 +186,10 @@ function removeAuthor(authorNames) {
 }
 
 function removeTable(table) {
-    if (!!table && table.rows.length > 1) {
-        while (table.rows.length > 1) {
+    if (!!table && table.rows.length >= 1) {
+        while (table.rows.length >= 1) {
             console.log(`rows = ${table.rows.length}`);
-            table.deleteRow(1);
+            table.deleteRow(0);
         }
 
         console.log(`rows = ${table.rows.length}`);

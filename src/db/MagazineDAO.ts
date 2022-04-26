@@ -80,22 +80,25 @@ export class MagazineDAO extends MainDAO {
         return this.aggregateHow(pipeline);
     }
 
-    async deleteOneById(id: number): Promise<boolean> {
+    async deleteOneById(id: string): Promise<boolean> {
         try {
-            const articleReviews = await this.findHow({_id: id}, {_id: 0, reviews: 1});
+            const articleReviews = await this.findHow({_id: new ObjectId(id)}, {_id: 0, reviews: 1});
             if (!articleReviews)
                 return false;
 
-            console.log(`articlereviews = \n${articleReviews[0].reviews}`);
+            console.log(`articlereviews = ${articleReviews[0].reviews}`);
 
             const reviewDao = ReviewDAO.getInstance();
             for (const review of articleReviews[0].reviews) {
+                console.log(`reviewid = ${review}`);
                 const res = await reviewDao.deleteOneById(review);
+                console.log(`res = ${!res}`);
                 if (!res)
                     return false;
             }
 
-            const result = await this.deleteOneHow({_id: id}) as DeleteResult;
+            const result = await this.deleteOneHow({_id: new ObjectId(id)}) as DeleteResult;
+            console.log(`final remove res = ${!result}`);
 
             return (result.deletedCount === 1);
         } catch (e: any) {

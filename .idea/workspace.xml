@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="210baba5-8fd5-4955-a0ea-697024b0b717" name="Changes" comment="now it does&#10;▕▔▔╲▂▂▂▂▂╱▔▔▏┈┈┈&#10;▕╲╱╱┋┋┋┋┋╲╲╱▏▕▔▏&#10;┉╲╱╭▆╮┋╭▆╮╲╱┉┉╲╲&#10;┉▕╲┉┉┉▅┉┉┉╱▏┉┉▕▕&#10;┉▕┉▔▔╰┻╯▔▔┉▏┉┉╱╱&#10;┉┈╲▂▂▂▂▂▂▂╱╲┉▕▕┉&#10;┉┉╱╰╰╰╯╯╯╮╮╮╲╱╱┉">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/create.pug" beforeDir="false" afterPath="$PROJECT_DIR$/public/create.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/info.pug" beforeDir="false" afterPath="$PROJECT_DIR$/public/info.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/delete.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/delete.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/MagazineDAO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/MagazineDAO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/ReviewDAO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/ReviewDAO.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,6 +217,8 @@
       <workItem from="1650850015273" duration="19956000" />
       <workItem from="1650875784564" duration="9112000" />
       <workItem from="1650886480882" duration="22527000" />
+      <workItem from="1650935954075" duration="177000" />
+      <workItem from="1650963569168" duration="7498000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1650551575954</created>
@@ -323,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650909689154</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="now it does&#10;▕▔▔╲▂▂▂▂▂╱▔▔▏┈┈┈&#10;▕╲╱╱┋┋┋┋┋╲╲╱▏▕▔▏&#10;┉╲╱╭▆╮┋╭▆╮╲╱┉┉╲╲&#10;┉▕╲┉┉┉▅┉┉┉╱▏┉┉▕▕&#10;┉▕┉▔▔╰┻╯▔▔┉▏┉┉╱╱&#10;┉┈╲▂▂▂▂▂▂▂╱╲┉▕▕┉&#10;┉┉╱╰╰╰╯╯╯╮╮╮╲╱╱┉">
+      <created>1650935988945</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1650935988945</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>#{article.name}</title>
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+    title #{article.name}
 <meta charset="utf-8" />
 </head>
 <body>
-    <h3>#{article.name}</h3>
-    <div>
-        <p>Статья № #{article._id}. Опубликовано: #{article.date}</p>
-        <br/>
-        <p>Авторы :</p>
-        <ul>
+div.jumbotron
+    h2.display-3 #{article.name}
+    p.lead Статья № #{article._id}
+    hr.my-2
+    p Опубликовано: #{article.date}
+
+div
+    h4.card-header Авторы:
+    ul.list-group
         each author in article.authors
-            <li>#{author}</li>
-        </ul>
-    </div>
-    <br>
-    <div>
-        <h3>Содержание:</h3>
-        <p>#{article.content}</p>
-    </div>
-    <br/>
-    div
-        h3 Отзывы
-        each review in article.reviews
-            div
-                div
-                    p Номер отзыва: #{review._id}
-                    p
-                        b #{review.name} 
-                        i #{review.message}
-                div
-                    p mark: #{review.mark}
-            br
+            li.list-group-item #{author}
+br
+div.form-group
+    h4 Содержание:
+    textarea.form-control(disabled=true) #{article.content}
+h3.card-header Отзывы
+ul.list-group
+    each review in article.reviews
+        li.list-group-item
+            div.card
+                div.card-body
+                    h4.card-header Имя пользователя: #{review.name}
+                    p.card-header Отзыв № (#{review._id})
+                    p.card-text #{review.message}
+                div.card-footer
+                    p #{review.mark} / 10
 </body>
 <html>
