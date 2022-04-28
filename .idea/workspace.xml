@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210baba5-8fd5-4955-a0ea-697024b0b717" name="Changes" comment="created rating page&#10;`(\(\&#10;(=':')&#10;(.(&quot;)(&quot;)">
-      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+    <list default="true" id="210baba5-8fd5-4955-a0ea-697024b0b717" name="Changes" comment="check README.MD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +79,7 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.app.js">
+  <component name="RunManager" selected="Shell Script.DockerContainer push">
     <configuration name="app.js" type="NodeJSConfigurationType" path-to-node="/bin/node" nameIsGenerated="true" path-to-js-file="dist/src/app.js" working-dir="$PROJECT_DIR$">
       <method v="2">
         <option name="TypeScript.Before.Run" enabled="true" FAIL_ON_ERROR="true" CONFIG_PATH="$PROJECT_DIR$/tsconfig.json" />
@@ -218,7 +217,8 @@
       <workItem from="1650875784564" duration="9112000" />
       <workItem from="1650886480882" duration="22527000" />
       <workItem from="1650935954075" duration="177000" />
-      <workItem from="1650963569168" duration="15390000" />
+      <workItem from="1650963569168" duration="16112000" />
+      <workItem from="1650984144791" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1650551575954</created>
@@ -353,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650982223304</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="check README.MD">
+      <created>1650983431634</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1650983431634</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +395,8 @@
     <MESSAGE value="now it does&#10;▕▔▔╲▂▂▂▂▂╱▔▔▏┈┈┈&#10;▕╲╱╱┋┋┋┋┋╲╲╱▏▕▔▏&#10;┉╲╱╭▆╮┋╭▆╮╲╱┉┉╲╲&#10;┉▕╲┉┉┉▅┉┉┉╱▏┉┉▕▕&#10;┉▕┉▔▔╰┻╯▔▔┉▏┉┉╱╱&#10;┉┈╲▂▂▂▂▂▂▂╱╲┉▕▕┉&#10;┉┉╱╰╰╰╯╯╯╮╮╮╲╱╱┉" />
     <MESSAGE value="beautified pages a bit&#10;(\__/)&#10;(='.'=)&#10;(&quot;)_(&quot;)" />
     <MESSAGE value="created rating page&#10;`(\(\&#10;(=':')&#10;(.(&quot;)(&quot;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="created rating page&#10;`(\(\&#10;(=':')&#10;(.(&quot;)(&quot;)" />
+    <MESSAGE value="check README.MD" />
+    <option name="LAST_COMMIT_MESSAGE" value="check README.MD" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

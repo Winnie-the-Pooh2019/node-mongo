@@ -67,5 +67,11 @@
         "name": "Elzin",
         "message": "I guess, it should be in fiction dept",
         "mark": 2
+    },
+    {
+        "id": 12,
+        "name": "Olezha",
+        "message": "My children don't like lego, but I do",
+        "mark": 10
     }
 ]

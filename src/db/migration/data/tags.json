@@ -10,5 +10,13 @@
     {
         "_id": 3,
         "name": "policy"
+    },
+    {
+        "_id": 4,
+        "name": "toys"
+    },
+    {
+        "_id": 5,
+        "name": "for kids"
     }
 ]

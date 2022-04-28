@@ -54,5 +54,21 @@
         "reviews": [
             9, 10, 11
         ]
+    },
+    {
+        "_id": 5,
+        "name": "How Lego Is Constructing the Next Generation of Engineers",
+        "authors": [
+            "Franz Lidz"
+        ],
+        "date": "2013-05-04",
+        "tags": [
+            4,
+            5
+        ],
+        "content": "With programmable robots and student competitions, Lego is making “tinkering with machines cool again”",
+        "reviews": [
+            12
+        ]
     }
 ]
